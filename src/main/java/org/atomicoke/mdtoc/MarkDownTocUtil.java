@@ -27,6 +27,17 @@ public class MarkDownTocUtil {
                    .replace("，", ""));
     }
 
+    /**
+     * 处理前缀
+     * <pre>
+     *      #   =>  *
+     *      ##  =>     *
+     *      ...
+     * </pre>
+     *
+     * @param raw 生
+     * @return {@link String}
+     */
     public static String processPrefix(String raw) {
         raw = raw + "#";
         final String[] raws = raw.split("");

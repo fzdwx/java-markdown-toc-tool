@@ -19,11 +19,10 @@ public class MarkDownParser {
     public static final String pattern = "[{0}](#{1})";
 
     public static void process(String md) {
-        List<String> titleLines = parseTitleLinesFromMarkdown(md);
-        for (String titleLine : titleLines) {
+        parseTitleLinesFromMarkdown(md).forEach(titleLine->{
             final String[] split = titleLine.split("# ");
             System.out.println(MarkDownTocUtil.processPrefix(split[0]) + MessageFormat.format(MarkDownParser.pattern, split[1], MarkDownTocUtil.processAnchorpoint(split[1])));
-        }
+        });
     }
 
     /**
