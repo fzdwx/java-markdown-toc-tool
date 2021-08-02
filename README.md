@@ -32,7 +32,7 @@ after:
 ```
 
 ## Set up
-
+- jdk 1.8
 - 源码下载：git clone git@github.com:likedeke/java-markdown-toc-tool.git
 - 下载编译好的Jar包[go to releases页面](https://github.com/likedeke/java-markdown-toc-tool/releases)
 
