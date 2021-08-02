@@ -31,6 +31,15 @@ after:
     * [3.集成sentinel](#3%E9%9B%86%E6%88%90sentinel)
 ```
 
+## Set up
+
+- 源码下载：git clone git@github.com:likedeke/java-markdown-toc-tool.git
+- 下载编译好的Jar包[releases页面](https://github.com/likedeke/java-markdown-toc-tool/releases)
+
+## Help
+
+查看有多少种命令[源码](https://github.com/likedeke/java-markdown-toc-tool/blob/like/src/main/java/org/atomicoke/mdtoc/MdTocToolCliArg.java)
+
 ## Version
 
 - v-0.01
