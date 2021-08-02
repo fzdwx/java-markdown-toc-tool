@@ -1,4 +1,4 @@
-# Java markdown toc tool 
+# Java markdown toc tool
                                                                                    
 > 🚀  Current Version 0.2.2    |    Under development... welcome issue or pr!!!
                                                                
@@ -89,6 +89,7 @@ java -jar xxx.jar -lf <with localFilePath>
 ## TODO List
 
 - [ ] 解析代码块，代码块里的内容还会存在，导致不准确
+- [ ] 标题的完了后的空格要去掉
 - [ ] 增加对linux中charset的说明
 - [x] 在jar包环境中找不到src\resources\application.yml
     - 使用ClassPathResource
