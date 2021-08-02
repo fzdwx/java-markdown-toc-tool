@@ -1,5 +1,7 @@
-# Java markdown toc tool | Current Version 0.2.2  | Under development
-
+# Java markdown toc tool 
+                                                                                   
+> 🚀  Current Version 0.2.2    |    Under development... welcome issue or pr!!!
+                                                               
 根据markdown生成对应的目录
 
 prev:
