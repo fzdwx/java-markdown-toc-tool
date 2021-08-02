@@ -1,7 +1,13 @@
 package org.atomicoke.mdtoc.handler;
 
+import cn.hutool.core.io.FileUtil;
+import cn.hutool.core.lang.Console;
 import cn.hutool.core.util.StrUtil;
+import org.atomicoke.MarkDownTocTool;
+import org.atomicoke.mdtoc.MarkDownParser;
 import org.atomicoke.mdtoc.MdTocToolCliArg;
+
+import java.util.List;
 
 /**
  * Description: 针对 --lf {@link MdTocToolCliArg#localFile} <br>
@@ -19,8 +25,8 @@ public class LocalFileMdTocToolArgHandler extends MdTocToolArgHandler {
 
     @Override
     public void handler(MdTocToolCliArg mdTocToolCliArg) {
-        final String localFile = mdTocToolCliArg.localFile;
-
-        System.out.println(localFile);
+        final String md = FileUtil.readString(mdTocToolCliArg.localFile, MarkDownTocTool.DefaultCharset);
+        final List<String> process = MarkDownParser.process(md);
+        process.forEach(Console::log);
     }
 }

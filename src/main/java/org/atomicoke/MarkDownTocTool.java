@@ -11,6 +11,7 @@ import org.atomicoke.mdtoc.MdTocToolProperties;
 import org.yaml.snakeyaml.Yaml;
 
 import java.nio.charset.Charset;
+import java.nio.charset.StandardCharsets;
 import java.text.SimpleDateFormat;
 
 /**
@@ -22,6 +23,7 @@ import java.text.SimpleDateFormat;
 public class MarkDownTocTool {
 
     public final static SimpleDateFormat SIMPLE_DATE_FORMAT = new SimpleDateFormat(DatePattern.NORM_DATETIME_MS_PATTERN);
+    public final static Charset DefaultCharset = StandardCharsets.UTF_8;
     /** 当前项目的常量池 */
     public static final MdTocToolProperties MD_TOC_TOOL_PROPERTIES;
     /** dns查询的网站 */

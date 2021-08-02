@@ -30,6 +30,7 @@ public class MarkDownParser {
     public static List<String> process(String md) {
         return parseTitleLinesFromMarkdown(md)
                 .stream()
+                .map(MarkDownTocUtil::processTitleLine)
                 .map(titleLine -> {
                     final String[] split = titleLine.split("# ");
                     return MarkDownTocUtil.processPrefix(split[0]) + MarkDownParser.getSuffix(split[1]);

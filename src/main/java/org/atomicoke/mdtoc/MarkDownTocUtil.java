@@ -2,12 +2,6 @@ package org.atomicoke.mdtoc;
 
 import cn.hutool.core.util.URLUtil;
 
-import java.io.File;
-import java.io.IOException;
-import java.net.URL;
-import java.util.ArrayList;
-import java.util.List;
-
 /**
  * @author <a href="mailto:likelovec@gmail.com">like</a>
  * @date 2021/8/1 19:36
@@ -35,6 +29,18 @@ public class MarkDownTocUtil {
     }
 
     /**
+     * 修复最后标题行打印不全
+     *
+     * @param titleLine 标题行
+     * @return {@link String}
+     */
+    public static String processTitleLine(String titleLine) {
+        return titleLine
+                .replace("\r", "")
+                .replace("\n", "");
+    }
+
+    /**
      * 处理前缀
      * <pre>
      *      #   =>  *
@@ -49,7 +55,7 @@ public class MarkDownTocUtil {
         raw = raw + "#";
         final String[] raws = raw.split("");
 
-        StringBuilder rest = new StringBuilder("");
+        StringBuilder rest = new StringBuilder();
         for (int i = 1; i < raws.length; i++) {
             rest.append("  ");
         }
