@@ -39,15 +39,17 @@ public class MdTocToolArgHandlerInvocation {
         });
     }
 
+    // private methods
+
     /**
      * 加载 handler
      */
-    private static void loadHandler() {
+    static void loadHandler() {
         try {
-            getAllAssignedClass(MdTocToolArgHandler.class)
-                    .forEach(clazz -> {
-                        handlers.add(ReflectUtil.newInstance(clazz));
-                    });
+            MdTocToolArgHandlerInvocation.getAllAssignedClass(MdTocToolArgHandler.class)
+                                         .forEach(clazz -> {
+                                             handlers.add(ReflectUtil.newInstance(clazz));
+                                         });
         } catch (IOException | ClassNotFoundException e) {
             e.printStackTrace();
         }
@@ -66,7 +68,7 @@ public class MdTocToolArgHandlerInvocation {
     static <Type> List<Class<Type>> getAllAssignedClass(Class<Type> clazz) throws IOException,
             ClassNotFoundException {
         List<Class<Type>> classes = new ArrayList<>();
-        for (Class<Type> c : getClasses(clazz)) {
+        for (Class<Type> c : MdTocToolArgHandlerInvocation.getClasses(clazz)) {
             if (clazz.isAssignableFrom(c) && !clazz.equals(c)) {
                 classes.add(c);
             }
@@ -106,7 +108,7 @@ public class MdTocToolArgHandlerInvocation {
         }
         for (File f : dir.listFiles()) {
             if (f.isDirectory()) {
-                classes.addAll(getClasses(f, pk + "." + f.getName()));
+                classes.addAll(MdTocToolArgHandlerInvocation.getClasses(f, pk + "." + f.getName()));
             }
             String name = f.getName();
             if (name.endsWith(".class")) {

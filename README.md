@@ -32,11 +32,13 @@ after:
 ```
 
 ## Set up
+
 - jdk 1.8
 - 源码下载：git clone git@github.com:likedeke/java-markdown-toc-tool.git
 - 下载编译好的Jar包[go to releases页面](https://github.com/likedeke/java-markdown-toc-tool/releases)
 
 ## Usage
+
 ```bash
 java -jar xxx.jar       # 查看帮助
 java -jar xxx.jar -rf <with remoteFileUrl>
@@ -48,6 +50,7 @@ java -jar xxx.jar -lf <with localFilePath>
 查看有多少种命令[go to 源码](https://github.com/likedeke/java-markdown-toc-tool/blob/like/src/main/java/org/atomicoke/mdtoc/MdTocToolCliArg.java)
 
 ## Dependence
+
 - hutool [5.7.6]
 - jcommander [1.81]
 - snakeyaml [1.10]
@@ -56,12 +59,15 @@ java -jar xxx.jar -lf <with localFilePath>
 
 ## Version
 
-- v-0.01
-    - 第一次提交
-    - 简单测试功能
-
+- v-0.2.1
+    - fix:在jar包环境中找不到src\resources\application.yml
+      ![img.png](doc/image/v-0.2.1-fileNotFoundException.png)
 - v-0.2
     - 基于jcommander对项目进行命令行的改造
     - 修复标题行打印不全（原因：\r导致）
     - todo:
         - 解析代码块，代码块里的内容还会存在，导致不准确
+- v-0.01
+    - 第一次提交
+    - 简单测试功能
+    

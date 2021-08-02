@@ -2,7 +2,7 @@ package org.atomicoke;
 
 import cn.hutool.core.bean.BeanUtil;
 import cn.hutool.core.date.DatePattern;
-import cn.hutool.core.io.FileUtil;
+import cn.hutool.core.io.resource.ClassPathResource;
 import cn.hutool.core.util.ArrayUtil;
 import com.beust.jcommander.JCommander;
 import org.atomicoke.mdtoc.MdTocToolArgHandlerInvocation;
@@ -36,7 +36,7 @@ public class MarkDownTocTool {
     static {
         // 读取配置文件中的信息
         MD_TOC_TOOL_PROPERTIES = new MdTocToolProperties();
-        BeanUtil.copyProperties(new Yaml().load(FileUtil.getInputStream("application.yml")), MD_TOC_TOOL_PROPERTIES);
+        BeanUtil.copyProperties(new Yaml().load(new ClassPathResource(".\\application.yml").getStream()), MD_TOC_TOOL_PROPERTIES);
     }
 
     public static void main(String[] args) {
@@ -52,9 +52,8 @@ public class MarkDownTocTool {
     }
 
     private static void resolveCmd(String[] args) {
-        initArgs(toolArgs);
-
         try {
+            initArgs(toolArgs);
             commander.parse(args);
         } catch (Exception e) {
             seeUsage();
@@ -74,6 +73,10 @@ public class MarkDownTocTool {
         commander.usage();
     }
 
+    /**
+     * 初始化参数
+     * <pre>用于解析命令之前</pre>
+     */
     static void initArgs(MdTocToolCliArg arg) {
         commander = JCommander.newBuilder().addObject(arg).build();
         commander.setProgramName(MD_TOC_TOOL_PROPERTIES.name);

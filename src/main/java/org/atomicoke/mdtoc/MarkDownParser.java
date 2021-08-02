@@ -28,7 +28,8 @@ public class MarkDownParser {
      * @return {@link List<String>}
      */
     public static List<String> process(String md) {
-        return parseTitleLinesFromMarkdown(md)
+        return MarkDownParser
+                .parseTitleLinesFromMarkdown(md)
                 .stream()
                 .map(MarkDownTocUtil::processTitleLine)
                 .map(titleLine -> {
