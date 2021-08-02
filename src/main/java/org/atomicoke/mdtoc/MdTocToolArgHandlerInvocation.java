@@ -1,12 +1,12 @@
 package org.atomicoke.mdtoc;
 
+import cn.hutool.core.io.resource.ClassPathResource;
 import cn.hutool.core.util.ClassUtil;
 import cn.hutool.core.util.ReflectUtil;
 import org.atomicoke.mdtoc.handler.MdTocToolArgHandler;
 
 import java.io.File;
 import java.io.IOException;
-import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -46,10 +46,11 @@ public class MdTocToolArgHandlerInvocation {
      */
     static void loadHandler() {
         try {
-            MdTocToolArgHandlerInvocation.getAllAssignedClass(MdTocToolArgHandler.class)
-                                         .forEach(clazz -> {
-                                             handlers.add(ReflectUtil.newInstance(clazz));
-                                         });
+            MdTocToolArgHandlerInvocation
+                    .getAllAssignedClass(MdTocToolArgHandler.class)
+                    .forEach(clazz -> {
+                        handlers.add(ReflectUtil.newInstance(clazz));
+                    });
         } catch (IOException | ClassNotFoundException e) {
             e.printStackTrace();
         }
@@ -88,9 +89,11 @@ public class MdTocToolArgHandlerInvocation {
             ClassNotFoundException {
         String pk = clazz.getPackage().getName();
         String path = pk.replace('.', '/');
-        ClassLoader classloader = Thread.currentThread().getContextClassLoader();
-        URL url = classloader.getResource(path);
-        return getClasses(new File(url.getFile()), pk);
+        final ClassPathResource classPathResource = new ClassPathResource(path);
+        System.out.println(classPathResource.getPath());
+        System.out.println(classPathResource.getUrl());
+        final File file = classPathResource.getFile();
+        return getClasses(file, pk);
     }
 
     /**

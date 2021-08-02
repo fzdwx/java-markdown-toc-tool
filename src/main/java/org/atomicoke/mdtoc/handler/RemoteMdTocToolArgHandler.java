@@ -1,6 +1,5 @@
 package org.atomicoke.mdtoc.handler;
 
-import cn.hutool.core.lang.Console;
 import cn.hutool.core.util.StrUtil;
 import cn.hutool.http.HttpUtil;
 import org.atomicoke.mdtoc.MarkDownParser;
@@ -26,6 +25,6 @@ public class RemoteMdTocToolArgHandler extends MdTocToolArgHandler {
     public void handler(MdTocToolCliArg mdTocToolCliArg) {
         final String md = HttpUtil.get(mdTocToolCliArg.remoteFile);
         final List<String> process = MarkDownParser.process(md);
-        process.forEach(Console::log);
+        process.forEach(System.out::println);
     }
 }

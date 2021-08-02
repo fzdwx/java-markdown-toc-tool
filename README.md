@@ -45,6 +45,8 @@ java -jar xxx.jar -rf <with remoteFileUrl>
 java -jar xxx.jar -lf <with localFilePath>
 ``` 
 
+![image](https://user-images.githubusercontent.com/65269574/127866719-a2a85659-84c9-4fd5-a15f-e5b77e08716b.png)
+
 ## Help
 
 查看有多少种命令[go to 源码](https://github.com/likedeke/java-markdown-toc-tool/blob/like/src/main/java/org/atomicoke/mdtoc/MdTocToolCliArg.java)
@@ -59,6 +61,8 @@ java -jar xxx.jar -lf <with localFilePath>
 
 ## Version
 
+- v-0.2.2
+    - todo fix:在jar包环境中找不到handler的实现类
 - v-0.2.1
     - fix:在jar包环境中找不到src\resources\application.yml
       ![img.png](doc/image/v-0.2.1-fileNotFoundException.png)
