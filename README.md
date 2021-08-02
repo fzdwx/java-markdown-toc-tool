@@ -4,8 +4,7 @@
                                                                
 根据markdown生成对应的目录
 
-* [Java markdown toc tool](#Java-markdown-toc-tool)
-  * [3.集成sentinel](#3%E9%9B%86%E6%88%90sentinel)
+* [Java markdown toc tool](#Java-markdown-toc-tool
   * [Set up](#Set-up)
   * [Usage](#Usage)
   * [Help](#Help)
