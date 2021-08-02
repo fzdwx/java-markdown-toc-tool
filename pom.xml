@@ -6,7 +6,7 @@
 
     <groupId>org.atomicoke</groupId>
     <artifactId>markdown-toc-tool</artifactId>
-    <version>0.2.1</version>
+    <version>0.2.2</version>
 
     <developers>
         <developer>
@@ -18,7 +18,7 @@
     </developers>
 
     <properties>
-        <mtt.version>0.2.1</mtt.version>
+        <mtt.version>0.2.2</mtt.version>
 
         <maven-compiler-plugin.version>3.8.1</maven-compiler-plugin.version>
         <maven-surefire-plugin.version>2.22.2</maven-surefire-plugin.version>

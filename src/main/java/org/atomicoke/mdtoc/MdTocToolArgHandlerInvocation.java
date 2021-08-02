@@ -1,14 +1,11 @@
 package org.atomicoke.mdtoc;
 
-import cn.hutool.core.io.resource.ClassPathResource;
-import cn.hutool.core.util.ClassUtil;
 import cn.hutool.core.util.ReflectUtil;
 import org.atomicoke.mdtoc.handler.MdTocToolArgHandler;
 
-import java.io.File;
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 
 /**
@@ -39,85 +36,15 @@ public class MdTocToolArgHandlerInvocation {
         });
     }
 
-    // private methods
-
     /**
      * 加载 handler
      */
     static void loadHandler() {
-        try {
-            MdTocToolArgHandlerInvocation
-                    .getAllAssignedClass(MdTocToolArgHandler.class)
-                    .forEach(clazz -> {
-                        handlers.add(ReflectUtil.newInstance(clazz));
+        Optional.ofNullable(MdTocToolProperties.getProperties().handlerClassNames)
+                .ifPresent((classNames) -> {
+                    classNames.forEach(className -> {
+                        handlers.add(ReflectUtil.newInstance(className));
                     });
-        } catch (IOException | ClassNotFoundException e) {
-            e.printStackTrace();
-        }
-    }
-
-    // copy method
-
-    /**
-     * 获取同一路径下所有子类或接口实现类
-     *
-     * @param clazz
-     * @return
-     * @throws IOException
-     * @throws ClassNotFoundException
-     */
-    static <Type> List<Class<Type>> getAllAssignedClass(Class<Type> clazz) throws IOException,
-            ClassNotFoundException {
-        List<Class<Type>> classes = new ArrayList<>();
-        for (Class<Type> c : MdTocToolArgHandlerInvocation.getClasses(clazz)) {
-            if (clazz.isAssignableFrom(c) && !clazz.equals(c)) {
-                classes.add(c);
-            }
-        }
-        return classes;
-    }
-
-    /**
-     * 取得当前类路径下的所有类
-     *
-     * @param clazz
-     * @return
-     * @throws IOException
-     * @throws ClassNotFoundException
-     */
-    static <Type> List<Class<Type>> getClasses(Class<Type> clazz) throws IOException,
-            ClassNotFoundException {
-        String pk = clazz.getPackage().getName();
-        String path = pk.replace('.', '/');
-        final ClassPathResource classPathResource = new ClassPathResource(path);
-        System.out.println(classPathResource.getPath());
-        System.out.println(classPathResource.getUrl());
-        final File file = classPathResource.getFile();
-        return getClasses(file, pk);
-    }
-
-    /**
-     * 迭代查找类
-     *
-     * @param dir
-     * @param pk
-     * @return
-     * @throws ClassNotFoundException
-     */
-    static <Type> List<Class<Type>> getClasses(File dir, String pk) throws ClassNotFoundException {
-        List<Class<Type>> classes = new ArrayList<>();
-        if (!dir.exists()) {
-            return classes;
-        }
-        for (File f : dir.listFiles()) {
-            if (f.isDirectory()) {
-                classes.addAll(MdTocToolArgHandlerInvocation.getClasses(f, pk + "." + f.getName()));
-            }
-            String name = f.getName();
-            if (name.endsWith(".class")) {
-                classes.add(ClassUtil.loadClass(pk + "." + name.substring(0, name.length() - 6)));
-            }
-        }
-        return classes;
+                });
     }
 }

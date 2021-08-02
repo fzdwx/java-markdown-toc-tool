@@ -62,16 +62,22 @@ java -jar xxx.jar -lf <with localFilePath>
 ## Version
 
 - v-0.2.2
-    - todo fix:在jar包环境中找不到handler的实现类
+    - fix:在jar包环境中找不到handler的实现类
 - v-0.2.1
     - fix:在jar包环境中找不到src\resources\application.yml
       ![img.png](doc/image/v-0.2.1-fileNotFoundException.png)
 - v-0.2
     - 基于jcommander对项目进行命令行的改造
     - 修复标题行打印不全（原因：\r导致）
-    - todo:
-        - 解析代码块，代码块里的内容还会存在，导致不准确
 - v-0.01
     - 第一次提交
     - 简单测试功能
-    
+
+## TODO List
+
+- [ ] 解析代码块，代码块里的内容还会存在，导致不准确
+- [x] 在jar包环境中找不到src\resources\application.yml
+    - 使用ClassPathResource
+- [x] 在jar包环境中找不到handler的实现类
+    - 解决方案:添加配置信息，使用MdTocToolProperties#handlerClassNames来配置全限定类名，然后使用类加载器进行加载。
+
