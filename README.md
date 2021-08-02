@@ -62,11 +62,12 @@ java -jar xxx.jar -lf <with localFilePath>
 - v-0.2.1
     - fix:在jar包环境中找不到src\resources\application.yml
       ![img.png](doc/image/v-0.2.1-fileNotFoundException.png)
+    - todo:
+      - 增加在linux环境下打印charset 
+      - 解析代码块，代码块里的内容还会存在，导致不准确
 - v-0.2
     - 基于jcommander对项目进行命令行的改造
     - 修复标题行打印不全（原因：\r导致）
-    - todo:
-        - 解析代码块，代码块里的内容还会存在，导致不准确
 - v-0.01
     - 第一次提交
     - 简单测试功能
