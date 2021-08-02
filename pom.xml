@@ -6,8 +6,30 @@
 
     <groupId>org.atomicoke</groupId>
     <artifactId>markdown-toc-tool</artifactId>
-    <version>0.01</version>
+    <version>${project.version}</version>
 
+    <developers>
+        <developer>
+            <name>like</name>
+            <email>mailto:likelovec@gmail.com</email>
+            <url>https://github.com/likedeke</url>
+            <organizationUrl>https://github.com/atomiCoke</organizationUrl>
+        </developer>
+    </developers>
+
+    <properties>
+        <project.version>0.01</project.version>
+
+        <maven-compiler-plugin.version>3.8.1</maven-compiler-plugin.version>
+        <maven-surefire-plugin.version>2.22.2</maven-surefire-plugin.version>
+        <maven-resources-plugin.version>3.2.0</maven-resources-plugin.version>
+        <!--        <project.build.sourceEncoding>GBK</project.build.sourceEncoding>-->
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+
+        <hutool-all.version>5.7.6</hutool-all.version>
+        <junit-jupiter.version>5.7.2</junit-jupiter.version>
+        <jcommander.version>1.72</jcommander.version>
+    </properties>
 
     <dependencies>
         <dependency>
@@ -16,17 +38,17 @@
             <version>${hutool-all.version}</version>
         </dependency>
         <dependency>
+            <groupId>com.beust</groupId>
+            <artifactId>jcommander</artifactId>
+            <version>${jcommander.version}</version>
+        </dependency>
+        <dependency>
             <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter</artifactId>
             <version>${junit-jupiter.version}</version>
             <scope>test</scope>
         </dependency>
     </dependencies>
-
-    <properties>
-        <hutool-all.version>5.7.6</hutool-all.version>
-        <junit-jupiter.version>5.7.2</junit-jupiter.version>
-    </properties>
 
     <repositories>
         <repository>
@@ -64,16 +86,18 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
+                <version>${maven-compiler-plugin.version}</version>
                 <configuration>
                     <source>1.8</source>
                     <target>1.8</target>
-                    <encoding>UTF-8</encoding>
+                    <encoding>${project.build.sourceEncoding}</encoding>
                 </configuration>
             </plugin>
             <!-- 打包跳过测试 -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-plugin</artifactId>
+                <version>${maven-surefire-plugin.version}</version>
                 <configuration>
                     <skipTests>true</skipTests>
                 </configuration>
@@ -82,6 +106,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-resources-plugin</artifactId>
+                <version>${maven-resources-plugin.version}</version>
                 <configuration>
                     <nonFilteredFileExtensions>
                         <nonFilteredFileExtension>woff</nonFilteredFileExtension>

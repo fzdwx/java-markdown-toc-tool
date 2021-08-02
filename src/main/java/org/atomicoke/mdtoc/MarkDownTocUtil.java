@@ -11,7 +11,8 @@ public class MarkDownTocUtil {
     /**
      * 处理生成的锚点，去掉不能用的字符
      * <pre>
-     *      b.关于使用lb://server-name 语法遇到的问题 => b关于使用lbserver-name-语法遇到的问题
+     *     demo: b.关于使用lb://server-name 语法遇到的问题 => b关于使用lbserver-name-语法遇到的问题
+     *     problem: 可能还有些字符没有剔除，欢迎RP！
      *  </pre>
      *
      * @param raw 原始数据
