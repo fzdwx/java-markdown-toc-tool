@@ -47,6 +47,13 @@ java -jar xxx.jar -lf <with localFilePath>
 
 查看有多少种命令[go to 源码](https://github.com/likedeke/java-markdown-toc-tool/blob/like/src/main/java/org/atomicoke/mdtoc/MdTocToolCliArg.java)
 
+## Dependence
+- hutool [5.7.6]
+- jcommander [1.81]
+- snakeyaml [1.10]
+- lombok [1.18.20]
+- junit [5.7.2]
+
 ## Version
 
 - v-0.01
