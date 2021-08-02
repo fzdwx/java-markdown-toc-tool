@@ -36,6 +36,13 @@ after:
 - 源码下载：git clone git@github.com:likedeke/java-markdown-toc-tool.git
 - 下载编译好的Jar包[go to releases页面](https://github.com/likedeke/java-markdown-toc-tool/releases)
 
+## Usage
+```bash
+java -jar xxx.jar       # 查看帮助
+java -jar xxx.jar -rf <with remoteFileUrl>
+java -jar xxx.jar -lf <with localFilePath>
+``` 
+
 ## Help
 
 查看有多少种命令[go to 源码](https://github.com/likedeke/java-markdown-toc-tool/blob/like/src/main/java/org/atomicoke/mdtoc/MdTocToolCliArg.java)
