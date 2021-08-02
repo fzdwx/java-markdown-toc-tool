@@ -34,11 +34,11 @@ after:
 ## Set up
 
 - 源码下载：git clone git@github.com:likedeke/java-markdown-toc-tool.git
-- 下载编译好的Jar包[releases页面](https://github.com/likedeke/java-markdown-toc-tool/releases)
+- 下载编译好的Jar包[go to releases页面](https://github.com/likedeke/java-markdown-toc-tool/releases)
 
 ## Help
 
-查看有多少种命令[源码](https://github.com/likedeke/java-markdown-toc-tool/blob/like/src/main/java/org/atomicoke/mdtoc/MdTocToolCliArg.java)
+查看有多少种命令[go to 源码](https://github.com/likedeke/java-markdown-toc-tool/blob/like/src/main/java/org/atomicoke/mdtoc/MdTocToolCliArg.java)
 
 ## Version
 
