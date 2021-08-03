@@ -19,17 +19,17 @@ import java.util.List;
 @ToString
 public class MdTocToolProperties {
 
-    /** 实例 */
+    /** instance */
     private static MdTocToolProperties PROPERTIES;
     /** app的名字 */
     public String name;
     /** app版本 */
-    public String Version;
+    public String version;
     /** 需要加载的MdTocToolArgHandler的实现类的全名称 */
     public List<String> handlerClassNames;
 
     /**
-     * 延迟加载
+     * 延迟加载（lazy）
      */
     public static MdTocToolProperties getProperties() {
         if (PROPERTIES == null) {

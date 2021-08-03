@@ -20,6 +20,6 @@ public class VersionMdTocToolArgHandler extends MdTocToolArgHandler {
 
     @Override
     public void handler(MdTocToolCliArg mdTocToolCliArg) {
-        System.out.println(MD_TOC_TOOL_PROPERTIES.name + ": " + MD_TOC_TOOL_PROPERTIES.Version);
+        System.out.println(MD_TOC_TOOL_PROPERTIES.name + ": " + MD_TOC_TOOL_PROPERTIES.version);
     }
 }
