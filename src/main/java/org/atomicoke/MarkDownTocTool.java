@@ -43,7 +43,7 @@ public class MarkDownTocTool {
         printCharsetDoc();
 
         if (ArrayUtil.isEmpty(args)) {
-            seeUsage();
+            usage();
             return;
         }
 
@@ -56,7 +56,7 @@ public class MarkDownTocTool {
             initArgs(toolArgs);
             commander.parse(args);
         } catch (Exception e) {
-            seeUsage();
+            usage();
             return;
         }
         // 根据 commander解析出来的toolArgs调用对应的处理器进行处理
@@ -65,7 +65,7 @@ public class MarkDownTocTool {
 
     // tool method======================================
 
-    static void seeUsage() {
+    static void usage() {
         System.out.println();
         if (commander == null) {
             initArgs(new MdTocToolCliArg());
@@ -86,13 +86,17 @@ public class MarkDownTocTool {
      * 打印关于编码问题的文档
      */
     static void printCharsetDoc() {
-        System.out.println("=======================================================================================================================================");
+        System.out.println("=============================================================================================================================================");
         System.out.println("|| Your JAVA Virtual Machine default charset:[ " + Charset.defaultCharset() + " ] (Depends on the locale and character set of the underlying operating system.)");
         System.out.println("|| If you have garbled Chinese characters, you can use the following command:");
-        System.out.println("|| chcp               # View the encoding format of the current cmd");
-        System.out.println("||     chcp 65001     # Set UTF-8");
-        System.out.println("||     chcp 936       # Set GKB");
-        System.out.println("||     chcp 437       # Set American English                       Author:like mailto:likelovec@gmail.com   https://github.com/likedeke");
-        System.out.println("=======================================================================================================================================");
+        System.out.println("|| Windows CMD:");
+        System.out.println("||      chcp               # View the encoding format of the current cmd");
+        System.out.println("||          chcp 65001     # Set UTF-8");
+        System.out.println("||          chcp 936       # Set GKB");
+        System.out.println("||          chcp 437       # Set American English");
+        System.out.println("|| Linux Dont Need");
+        System.out.println("||      locale             # View current encoding");
+        System.out.println("||                                                                       author:like mailto:likelovec@gmail.com   https://github.com/likedeke");
+        System.out.println("=============================================================================================================================================");
     }
 }

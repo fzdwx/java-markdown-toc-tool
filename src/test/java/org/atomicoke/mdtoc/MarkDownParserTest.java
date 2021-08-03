@@ -15,13 +15,12 @@ class MarkDownParserTest {
     void parseTitleLinesFromMarkdown() {
         final String md = FileUtil.readUtf8String("..\\..\\doc\\test.md");
         final List<String> list = MarkDownParser.parseTitleLinesFromMarkdown(md);
-        for (String s : list) {
-            System.out.println(s);
-        }
+
+        list.forEach(System.out::println);
     }
 
     @Test
-    void testProcess(){
+    void testProcess() {
         System.out.println(MarkDownTocUtil.processPrefix(""));
         System.out.println(MarkDownTocUtil.processPrefix("#"));
         System.out.println(MarkDownTocUtil.processPrefix("##"));

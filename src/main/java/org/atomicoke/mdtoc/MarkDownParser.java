@@ -1,6 +1,7 @@
 package org.atomicoke.mdtoc;
 
 import java.text.MessageFormat;
+import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.function.Supplier;
@@ -66,14 +67,8 @@ public class MarkDownParser {
      * @return {@link List<String>}
      */
     static List<String> parseTitleLinesFromMarkdown(String md) {
-        final List<String> list = new LinkedList<>();
-        final String[] split = md.split("\n");
-        for (String s : split) {
-            if (s.startsWith("#")) {
-                if (s.contains("# "))
-                    list.add(s);
-            }
-        }
-        return list;
+        return Arrays.stream(MarkDownTocUtil.processContent(md).split("\n"))
+                .filter(s -> s.startsWith("#") && s.contains("# "))
+                .collect(Collectors.toList());
     }
 }

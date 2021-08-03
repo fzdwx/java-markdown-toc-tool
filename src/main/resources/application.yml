@@ -1,7 +1,7 @@
 # org.atomicoke.mdtoc.MdTocToolProperties
 name: MarkDownTocTool
-version: 0.2.2
+version: 0.2.3
 handlerClassNames:
   - org.atomicoke.mdtoc.handler.LocalFileMdTocToolArgHandler
-  - org.atomicoke.mdtoc.handler.RemoteMdTocToolArgHandler
+  - org.atomicoke.mdtoc.handler.RemoteFileMdTocToolArgHandler
   - org.atomicoke.mdtoc.handler.VersionMdTocToolArgHandler

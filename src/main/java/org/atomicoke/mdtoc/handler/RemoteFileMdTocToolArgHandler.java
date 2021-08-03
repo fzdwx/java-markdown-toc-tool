@@ -14,7 +14,7 @@ import java.util.List;
  * @date 2021-08-02 17:40:13
  * @see MdTocToolArgHandler
  */
-public class RemoteMdTocToolArgHandler extends MdTocToolArgHandler {
+public class RemoteFileMdTocToolArgHandler extends MdTocToolArgHandler {
 
     @Override
     public boolean test(MdTocToolCliArg mdTocToolCliArg) {

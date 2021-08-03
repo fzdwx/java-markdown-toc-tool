@@ -61,14 +61,17 @@ java -jar xxx.jar -lf <with localFilePath>
 
 ## Version
 
+- v-0.2.3
+    - fix:解析代码块，代码块里的内容还会存在，导致不准确
+    - add:增加对linux中charset的说明
 - v-0.2.2
     - fix:在jar包环境中找不到handler的实现类
 - v-0.2.1
     - fix:在jar包环境中找不到src\resources\application.yml
       ![img.png](doc/image/v-0.2.1-fileNotFoundException.png)
     - todo:
-      - 增加在linux环境下打印charset 
-      - 解析代码块，代码块里的内容还会存在，导致不准确
+        - 增加在linux环境下打印charset
+        - 解析代码块，代码块里的内容还会存在，导致不准确
 - v-0.2
     - 基于jcommander对项目进行命令行的改造
     - 修复标题行打印不全（原因：\r导致）
@@ -78,8 +81,9 @@ java -jar xxx.jar -lf <with localFilePath>
 
 ## TODO List
 
-- [ ] 解析代码块，代码块里的内容还会存在，导致不准确
-- [ ] 增加对linux中charset的说明
+- [x] 解析代码块，代码块里的内容还会存在，导致不准确
+    - 解决方案:MarkDownTocUtil#processContent,使用split函数，因为```是成对出现的，所以针对这个进行正则匹配然后删除。
+- [x] 增加对linux中charset的说明
 - [x] 在jar包环境中找不到src\resources\application.yml
     - 使用ClassPathResource
 - [x] 在jar包环境中找不到handler的实现类
