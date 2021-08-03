@@ -1,6 +1,17 @@
 # Java markdown toc tool
-
+                                                                                   
+> 🚀  Current Version 0.2.2    |    Under development... welcome issue or pr!!!
+                                                               
 根据markdown生成对应的目录
+
+* [Java markdown toc tool](#Java-markdown-toc-tool)
+  * [Set up](#Set-up)
+  * [Usage](#Usage)
+  * [Help](#Help)
+  * [Dependence](#Dependence)
+  * [Version](#Version)
+  * [TODO List](#TODO-List)
+
 
 prev:
 
@@ -81,6 +92,7 @@ java -jar xxx.jar -lf <with localFilePath>
 
 ## TODO List
 
+- [ ] 标题的完了后的空格要去掉
 - [x] 解析代码块，代码块里的内容还会存在，导致不准确
     - 解决方案:MarkDownTocUtil#processContent,使用split函数，因为```是成对出现的，所以针对这个进行正则匹配然后删除。
 - [x] 增加对linux中charset的说明
