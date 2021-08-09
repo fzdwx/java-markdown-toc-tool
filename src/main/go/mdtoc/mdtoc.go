@@ -21,15 +21,11 @@ const (
 
 func main() {
 	javaHome := os.Getenv("JAVA_HOME") + "/bin/"
-	mdtocHome := os.Getenv("MDTOC_HOME")
+	mdTocHome := os.Getenv("MDTOC_HOME")
 
-	args := " "
-	for _, arg := range os.Args[1:] {
-		args = args + " " + arg
-	}
+	args := getArgs()
 
-	// remove current file name
-	jarPath := mdtocHome + "/lib/"
+	jarPath := mdTocHome + "/lib/"
 
 	command := javaHome + runJar + jarPath + JarName
 
@@ -42,9 +38,13 @@ func main() {
 
 // util func start =====================
 
-// subSting  在原始string(raw)中，返回0 ~ index
-func subSting(raw string, index int) string {
-	return raw[0:index]
+// getArgs 获取用户输入的命令行参数
+func getArgs() string {
+	args := " "
+	for _, arg := range os.Args[1:] {
+		args = args + " " + arg
+	}
+	return args
 }
 
 // run 执行命令
