@@ -7,7 +7,8 @@ import org.atomicoke.MarkDownTocTool;
 import java.util.List;
 
 /**
- * Description: md toc tool constants <br>
+ * 1
+ * md toc tool constants <br>
  * <pre>
  *      根据application.yml中的配置对当前类进行初始化
  *  </pre>
@@ -21,6 +22,7 @@ public class MdTocToolProperties {
 
     /** instance */
     private static MdTocToolProperties PROPERTIES;
+
     /** app的名字 */
     public String name;
     /** app版本 */

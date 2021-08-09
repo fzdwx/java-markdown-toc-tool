@@ -5,7 +5,7 @@ import org.atomicoke.mdtoc.MdTocToolCliArg;
 import java.util.function.Predicate;
 
 /**
- * Description: md toc工具参数处理程序 <br>
+ * handler的顶级父类
  * <pre>
  *      根据断言中的方法是否成功来决定是否调用handler()方法
  *  </pre>
@@ -14,7 +14,7 @@ import java.util.function.Predicate;
  * @date 2021-08-02 16:59:33
  * @see Predicate
  */
-public abstract class MdTocToolArgHandler implements Predicate<MdTocToolCliArg> {
+public abstract class AbstractMdTocToolArgHandler implements Predicate<MdTocToolCliArg> {
 
     /**
      * 当前handler被调用的条件

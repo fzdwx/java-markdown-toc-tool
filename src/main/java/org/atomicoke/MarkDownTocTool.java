@@ -15,7 +15,7 @@ import java.nio.charset.StandardCharsets;
 import java.text.SimpleDateFormat;
 
 /**
- * D:\Java\jdk-8\bin\java  -jar D:\Java\project\markdown-toc-tool\target\markdown-toc-tool-0.01.jar
+ * 工具主类
  *
  * @author <a href="mailto:likelovec@gmail.com">like</a>
  * @date 2021/8/1 18:29

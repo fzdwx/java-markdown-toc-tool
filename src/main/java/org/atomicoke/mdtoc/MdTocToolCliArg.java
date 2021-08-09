@@ -3,7 +3,7 @@ package org.atomicoke.mdtoc;
 import com.beust.jcommander.Parameter;
 
 /**
- * Description: markdown toc tool cli参数 <br>
+ * cli参数
  *
  * @author <a href="mailto:likelovec@gmail.com">like</a>
  * @date 2021-08-02 15:50:45

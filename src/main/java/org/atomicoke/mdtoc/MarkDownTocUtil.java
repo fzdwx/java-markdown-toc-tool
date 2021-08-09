@@ -8,6 +8,8 @@ import java.util.concurrent.atomic.AtomicInteger;
 import java.util.concurrent.atomic.AtomicReference;
 
 /**
+ * 一些辅助方法
+ *
  * @author <a href="mailto:likelovec@gmail.com">like</a>
  * @date 2021/8/1 19:36
  */
@@ -28,11 +30,11 @@ public class MarkDownTocUtil {
     public static String processAnchorpoint(String raw) {
         return URLUtil.encode(
                 raw.replace(".", "")
-                   .replace(" ", "-")
-                   .replace("://", "")
-                   .replace("。", "")
-                   .replace("！", "")
-                   .replace("，", ""));
+                        .replace(" ", "-")
+                        .replace("://", "")
+                        .replace("。", "")
+                        .replace("！", "")
+                        .replace("，", ""));
     }
 
     /**

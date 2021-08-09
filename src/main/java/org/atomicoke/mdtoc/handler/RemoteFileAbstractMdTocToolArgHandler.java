@@ -8,13 +8,13 @@ import org.atomicoke.mdtoc.MdTocToolCliArg;
 import java.util.List;
 
 /**
- * Description: 针对--rf {@link MdTocToolCliArg#remoteFile} <br>
+ * 针对--rf {@link MdTocToolCliArg#remoteFile}
  *
  * @author <a href="mailto:likelovec@gmail.com">like</a>
  * @date 2021-08-02 17:40:13
- * @see MdTocToolArgHandler
+ * @see AbstractMdTocToolArgHandler
  */
-public class RemoteFileMdTocToolArgHandler extends MdTocToolArgHandler {
+public class RemoteFileAbstractMdTocToolArgHandler extends AbstractMdTocToolArgHandler {
 
     @Override
     public boolean test(MdTocToolCliArg mdTocToolCliArg) {

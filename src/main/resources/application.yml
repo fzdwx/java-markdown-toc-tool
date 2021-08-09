@@ -1,4 +1,4 @@
-# org.atomicoke.mdtoc.MdTocToolProperties
+# @see org.atomicoke.mdtoc.MdTocToolProperties
 name: MarkDownTocTool
 version: 1.0.0
 handlerClassNames:

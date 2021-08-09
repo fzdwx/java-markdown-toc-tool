@@ -8,7 +8,7 @@ import java.util.function.Supplier;
 import java.util.stream.Collectors;
 
 /**
- * Description: markdown 文件解析器  <br>
+ * markdown 文件解析器
  *
  * <pre>
  *     将md中的标题行挑出来，并封装成类似这种格式的: * [..后端整合框架](#%E5%90%8E%E7%AB%AF%E6%95%B4%E5%90%88%E6%A1%86%E6%9E%B6)

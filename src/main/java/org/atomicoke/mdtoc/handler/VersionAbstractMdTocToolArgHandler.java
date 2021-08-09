@@ -5,13 +5,13 @@ import org.atomicoke.mdtoc.MdTocToolCliArg;
 import static org.atomicoke.MarkDownTocTool.MD_TOC_TOOL_PROPERTIES;
 
 /**
- * Description: 针对 -v {@link MdTocToolCliArg#version}<br>
+ * 针对 -v {@link MdTocToolCliArg#version}
  *
  * @author <a href="mailto:likelovec@gmail.com">like</a>
  * @date 2021-08-02 17:40:47
- * @see MdTocToolArgHandler
+ * @see AbstractMdTocToolArgHandler
  */
-public class VersionMdTocToolArgHandler extends MdTocToolArgHandler {
+public class VersionAbstractMdTocToolArgHandler extends AbstractMdTocToolArgHandler {
 
     @Override
     public boolean test(MdTocToolCliArg mdTocToolCliArg) {

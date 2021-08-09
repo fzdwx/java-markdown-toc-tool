@@ -10,13 +10,13 @@ import org.atomicoke.mdtoc.MdTocToolCliArg;
 import java.util.List;
 
 /**
- * Description: 针对 --lf {@link MdTocToolCliArg#localFile} <br>
+ * 针对 --lf {@link MdTocToolCliArg#localFile}
  *
  * @author <a href="mailto:likelovec@gmail.com">like</a>
  * @date 2021-08-02 17:39:37
  * @see MdTocToolCliArg#localFile
  */
-public class LocalFileMdTocToolArgHandler extends MdTocToolArgHandler {
+public class LocalFileAbstractMdTocToolArgHandler extends AbstractMdTocToolArgHandler {
 
     @Override
     public boolean test(MdTocToolCliArg mdTocToolCliArg) {
