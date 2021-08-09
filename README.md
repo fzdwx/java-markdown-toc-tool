@@ -106,7 +106,7 @@ linux
 ## TODO List
 
 - [ ] 标题的完了后的空格要去掉
-- [x] 引入命令行工具(go实现)省略掉java -jar的过程
+- [x] 研究一个能执行shell命令的语言，c或者go，去掉java -jar这个过程
 - [x] 解析代码块，代码块里的内容还会存在，导致不准确
     - 解决方案:MarkDownTocUtil#processContent,使用split函数，因为```是成对出现的，所以针对这个进行正则匹配然后删除。
 - [x] 增加对linux中charset的说明
