@@ -1,17 +1,16 @@
 # Java markdown toc tool
-                                                                                   
-> 🚀  Current Version 0.2.3    |    Under development... welcome issue or pr!!!
-                                                               
+
+> 🚀 Current Version 1.0.0 | Under development... welcome issue or pr!!!
+
 根据markdown生成对应的目录
 
 * [Java markdown toc tool](#Java-markdown-toc-tool)
-  * [Set up](#Set-up)
-  * [Usage](#Usage)
-  * [Help](#Help)
-  * [Dependence](#Dependence)
-  * [Version](#Version)
-  * [TODO List](#TODO-List)
-
+    * [Set up](#Set-up)
+    * [Usage](#Usage)
+    * [Help](#Help)
+    * [Dependence](#Dependence)
+    * [Version](#Version)
+    * [TODO List](#TODO-List)
 
 prev:
 
@@ -47,16 +46,28 @@ after:
 - jdk 1.8
 - 源码下载：git clone git@github.com:likedeke/java-markdown-toc-tool.git
 - 下载编译好的Jar包[go to releases页面](https://github.com/likedeke/java-markdown-toc-tool/releases)
+- Windows:
+    1. 添加路径变量 MDTOC_HOME xx\mdtoc
+        1. 例如D:\Java\project\markdown-toc-tool\src\main\go\mdtoc
+    2. 添加path %MDTOC_HOME%\bin
+- Linux
+    1. vim vim /etc/profile
+        1. export MDTOC_HOME=/root/app/mdtoc
+        2. export PATH=$PATH:$MDTOC_HOME/bin
+    2. source /etc/profile
 
 ## Usage
 
 ```bash
-java -jar xxx.jar       # 查看帮助
-java -jar xxx.jar -rf <with remoteFileUrl>
-java -jar xxx.jar -lf <with localFilePath>
+mdToc       # 查看帮助
+mdToc -rf <with remoteFileUrl>
+mdToc -lf <with localFilePath>
 ``` 
 
-![image](https://user-images.githubusercontent.com/65269574/127866719-a2a85659-84c9-4fd5-a15f-e5b77e08716b.png)
+widows
+![img.png](doc/image/img.png)
+linux
+![img_1.png](doc/image/img_1.png)
 
 ## Help
 
@@ -72,6 +83,8 @@ java -jar xxx.jar -lf <with localFilePath>
 
 ## Version
 
+- v-1.0.0
+    - 引入go命令行工具
 - v-0.2.3
     - fix:解析代码块，代码块里的内容还会存在，导致不准确
     - add:增加对linux中charset的说明
@@ -93,6 +106,7 @@ java -jar xxx.jar -lf <with localFilePath>
 ## TODO List
 
 - [ ] 标题的完了后的空格要去掉
+- [x] 引入命令行工具(go实现)省略掉java -jar的过程
 - [x] 解析代码块，代码块里的内容还会存在，导致不准确
     - 解决方案:MarkDownTocUtil#processContent,使用split函数，因为```是成对出现的，所以针对这个进行正则匹配然后删除。
 - [x] 增加对linux中charset的说明
